@@ -43,15 +43,11 @@ public class IHMQuestion2_1 extends JFrame {
             enHaut.setBackground(Color.blue);
 
         
-        boutonA.addActionListener( new JButtonObserver("JButon1", contenu));//les 3 observer
+        boutonA.addActionListener(new JButtonObserver("JButon1", contenu));//les 3 observer
         boutonA.addActionListener(new JButtonObserver("JButon2", contenu));
-        boutonA.addActionListener(new JButtonObserver("JButon3", contenu));
-        
-        
+        boutonA.addActionListener(new JButtonObserver("JButon3", contenu));       
         boutonB.addActionListener(new JButtonObserver("JButton 2", contenu));//2 observer
         boutonB.addActionListener(new JButtonObserver("JButton2.2", contenu));
-
-        // le bouton C a 1 observateur jbo1
         boutonC.addActionListener(new JButtonObserver("JButton1", contenu));//1 observer
 
         if (test) {
