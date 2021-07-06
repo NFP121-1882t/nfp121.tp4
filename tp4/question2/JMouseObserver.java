@@ -1,6 +1,6 @@
 package question2;
 
-//import java.awt.event.// à compléter
+import java.awt.event.*;
 import java.awt.event.MouseEvent;
 import java.awt.TextArea;
 
@@ -10,13 +10,13 @@ import java.awt.TextArea;
  * @author (votre nom)
  * @version (un numéro de version ou une date)
  */
-public class JMouseObserver { // à compléter
+public class JMouseObserver implements MouseListener{ 
 
 	private String nom;
 	private TextArea contenu;
 
 	/**
-	 * Constructeur d'objets de classe JButtonObserver
+	 * Constructeur 
 	 */
 	public JMouseObserver(String nom, TextArea contenu) {
 		this.nom = nom;
@@ -28,15 +28,15 @@ public class JMouseObserver { // à compléter
 
 	/**
 	 * affichage d'un message dans la zone de texte ce message est de la forme
-	 * observateur this.nom : souris entrée en (X,Y) exemple : observateur jmo1
-	 * : souris entrée en (15,20)
+	 * observateur this.nom : souris entr�e en (X,Y) exemple : observateur jmo1
+	 * : souris entr�e en (15,20)
 	 * 
 	 * @param
 	 */
 	public void mouseEntered(MouseEvent e) {
-		String message = "";
-		contenu.append(message + "\n");
-	}
+        String message = "observeur "+this.nom+" : souris entr�e en ("+e.getX()+","+ e.getY()+")";//entrer x et y
+        contenu.append(message + "\n");
+    }
 
 	public void mouseExited(MouseEvent e) {}
 

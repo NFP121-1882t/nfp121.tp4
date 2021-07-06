@@ -14,20 +14,21 @@ import java.net.*;
 import java.io.*;
 
 public class IHMCalculetteTest extends junit.framework.TestCase{
-    // DÃ©finissez ici les variables d'instance nÃ©cessaires Ã  vos engagements;
-    // Vous pouvez Ã©galement les saisir automatiquement du prÃ©sentoir
-    // Ã  l'aide du menu contextuel "PrÃ©sentoir --> Engagements".
+    // Définissez ici les variables d'instance nécessaires à vos engagements;
+    // Vous pouvez également les saisir automatiquement du présentoir
+    // à l'aide du menu contextuel "Présentoir --> Engagements".
     // Notez cependant que ce dernier ne peut saisir les objets primitifs
-    // du prÃ©sentoir (les objets sans constructeur, comme int, float, etc.).
+    // du présentoir (les objets sans constructeur, comme int, float, etc.).
 
     private JFrame f;
     private Robot robot;
     private static Random random= new Random();
+    
 
     /**
      * Met en place les engagements.
      *
-     * MÃ©thode appelÃ©e avant chaque appel de mÃ©thode de test.
+     * Méthode appelée avant chaque appel de méthode de test.
      */
     protected void setUp() throws java.lang.Exception{
         try{
@@ -35,7 +36,7 @@ public class IHMCalculetteTest extends junit.framework.TestCase{
             f = new IHMCalculette();
             f.pack();
             f.setVisible(true);
-            while(!(f.isShowing())){}
+            while(!(f.isShowing())){}//not showing
             f.setAlwaysOnTop(true);
             f.setLocation(random.nextInt(500), random.nextInt(500));
             robot = new Robot();
@@ -49,9 +50,9 @@ public class IHMCalculetteTest extends junit.framework.TestCase{
     /**
      * Supprime les engagements
      *
-     * MÃ©thode appelÃ©e aprÃ¨s chaque appel de mÃ©thode de test.
+     * Méthode appelée après chaque appel de méthode de test.
      */
-    protected void tearDown(){ // throws java.lang.Exception
+    protected void tearDown() throws java.lang.Exception{
         f.dispose();
     }
 
@@ -127,7 +128,7 @@ public class IHMCalculetteTest extends junit.framework.TestCase{
     }
 
    
-	
+    
     public void test_IHMCalculette_MauvaisFormatDuNombre() throws Exception{
         try{
             Container panel = f.getContentPane();
@@ -154,9 +155,9 @@ public class IHMCalculetteTest extends junit.framework.TestCase{
             empiler("32");
             assertTrue("[32]".equals(etatPile.getText()));
             empiler("AA");
-            assertTrue("incidence sur la pile d'Ã©valuation ???", "[32]".equals(etatPile.getText()));
+            assertTrue("incidence sur la pile d'évaluation ???", "[32]".equals(etatPile.getText()));
             empiler("32");
-            assertTrue("incidence sur la pile d'Ã©valuation ???","[32, 32]".equals(etatPile.getText()));
+            assertTrue("incidence sur la pile d'évaluation ???","[32, 32]".equals(etatPile.getText()));
         }catch(Exception e){
             fail("exception inattendue ! " + e.getClass().getName());
         }
@@ -243,7 +244,7 @@ public class IHMCalculetteTest extends junit.framework.TestCase{
 
     }
 
-    // extrait de http://www.hazirkod.com/hazirkodv.asp?KID=1425
+   
     public static void typeLine(String s, Robot robot, boolean enter) throws Exception{
         char[] array=s.toCharArray();
         for(int i=0;i<array.length;i++){
